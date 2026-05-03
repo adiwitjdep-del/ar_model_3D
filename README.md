@@ -1,1 +1,0 @@
-# ar_model_3D
