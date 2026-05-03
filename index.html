@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+
+<html lang="th">
+
+<head>
+
+<meta charset="UTF-8" />
+
+<title>Adivit</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" href="style.css" />
+
+</head>
+
+<body>
+
+
+
+<header>
+
+<div class="main-title">Adivit</div>
+
+<div class="sub-title">Adivit 3D modeling (AR)</div>
+
+</header>
+
+
+
+<!-- kim221-->
+
+<div class="ar-section">
+
+<div class="head-title">One Eye Witch</div>
+
+<div class="sub-title">แม่มดที่ถูกสาปให้มีตาข้างเดียวจึงพยายามผสมยาให้ดวงตาตัวเองกลับมา.</div>
+
+<model-viewer
+
+    id="model1"
+
+    src="kim221.glb"
+
+    ios-src="kim221.usdz"
+
+    alt="kim221 3D Model"
+
+    ar
+
+    ar-modes="scene-viewer webxr quick-look"
+
+    camera-controls
+
+    auto-rotate
+
+    shadow-intensity="1"
+
+    environment-image="neutral"
+
+    style="width:100%; height:400px;">
+
+</model-viewer>
+
+<button class="ar-button" onclick="triggerAR('model1')">Play AR</button>
+
+</div>
+
+
+
+<!-- cheryV23-->
+
+<div class="ar-section">
+
+<div class="head-title">cheryV23</div>
+
+<div class="sub-title">คอนเซ็ปของรถสายตั้งแคมป์ที่ด้านหลังสามารถขึ้นไปกางเต้นท์จากบันไดของประตูหลังได้และสามารถประยุกข์ใช้เป็นที่เก็บของได้ </div>
+
+<model-viewer
+
+    id="model2"
+
+    src="Chery V23_Orange (1) (2) (1).glb"
+
+    ios-src="Chery V23_Orange (1) (2) (1).usdz"
+
+    alt="Chery V23_Orange (1) (2) (1) 3D Model"
+
+    ar
+
+    ar-modes="scene-viewer webxr quick-look"
+
+    camera-controls
+
+    auto-rotate
+
+    shadow-intensity="1"
+
+    environment-image="neutral"
+
+    style="width:100%; height:400px;">
+
+</model-viewer>
+
+<button class="ar-button" onclick="triggerAR('model2')">Play AR</button>
+
+</div>
+
+
+<!-- bocchi-->
+
+<div class="ar-section">
+
+<div class="head-title">bocchi</div>
+
+<div class="sub-title">งานฝึกปั้นส่วนตัวจากอนิเมะ bocchi the rock </div>
+
+<model-viewer
+
+    id="model3"
+
+    src="bocchi.glb"
+
+    ios-src="bocchi.usdz"
+
+    alt="bocchi 3D Model"
+
+    ar
+
+    ar-modes="scene-viewer webxr quick-look"
+
+    camera-controls
+
+    auto-rotate
+
+    shadow-intensity="1"
+
+    environment-image="neutral"
+
+    style="width:100%; height:400px;">
+
+</model-viewer>
+
+<button class="ar-button" onclick="triggerAR('model3')">Play AR</button>
+
+</div>
+
+<footer>
+
+<div class="footer-link"><strong>IG:Jdep0315:</strong> <a href="https://www.instagram.com/jdep_0315/" target="_blank">instagram.com</a></div>
+
+</footer>
+
+
+
+<!--  โหลด model-viewer หลังสุดเพื่อให้โหลดหน้าเว็บเร็วขึ้น -->
+
+<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
+
+
+<!--  Script ปุ่ม Play AR พร้อม catch error -->
+
+<script>
+
+   function triggerAR(id) {
+
+     const viewer = document.getElementById(id);
+
+     if (viewer && viewer.activateAR) {
+
+       viewer.activateAR().catch((error) => {
+
+         alert("AR ไม่พร้อมบนอุปกรณ์นี้ หรือถูกบล็อกโดย browser\n(แนะนำให้กดปุ่ม AR บนมุมขวาของโมเดลแทน)");
+
+         console.warn("activateAR failed:", error);
+
+       });
+
+     }
+
+   }
+
+</script>
+
+
+
+</body>
+
+</html>
